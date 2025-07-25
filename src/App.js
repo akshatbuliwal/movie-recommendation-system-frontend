@@ -17,9 +17,10 @@ function App() {
     }
 
     try {
-      const response = await axios.post("", {
-        movie: movie.trim(),
-      });
+      const response = await axios.post(
+        "https://movie-recommendation-system-cib6.onrender.com/recommend",
+        { movie: movie.trim() }
+      );
 
       if (response.data && response.data.recommended_movies) {
         setRecommendations(response.data.recommended_movies);
